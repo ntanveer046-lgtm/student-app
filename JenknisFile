@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "Qa server" }
+    agent { label "qa" }
 
     stages {
 
@@ -31,7 +31,7 @@ pipeline {
         stage('Deploy to Artifactory') {
             steps {
                 configFileProvider(
-                    [configFile(fileId: "da662eac-7a53-4268-beec-69db67ad3a65", variable: 'MAVEN_SETTINGS')]
+                    [configFile(fileId: "bee96efb-6ab9-4881-803f-c065c7e60460", variable: 'MAVEN_SETTINGS')]
                 ) {
                     sh 'mvn deploy -s $MAVEN_SETTINGS'
                 }
