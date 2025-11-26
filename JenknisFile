@@ -1,5 +1,5 @@
 pipeline {
-    agent { label "qa-server" }
+    agent { label "Qa server" }
 
     stages {
 
